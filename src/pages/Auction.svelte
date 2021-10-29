@@ -10,6 +10,8 @@
        auctionid = params.id;
     });
 
+    // link to resource : http://localhost:3000/auctions/:id
+
     async function getAuction () {
         const resp = await fetch('http://localhost:3000/auctions')
 

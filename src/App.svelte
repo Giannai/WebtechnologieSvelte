@@ -10,6 +10,7 @@
     import isAdmin from "./middelware/isAdmin";
     import Header from "./component/Header.svelte";
 
+
 	let page;
 	let params;
 
@@ -26,6 +27,9 @@
 	router.start();
 </script>
 
+<svelte:head>
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+</svelte:head>
 
 <Header/>
 <svelte:component this="{page}" {params}/>

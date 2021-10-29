@@ -1,14 +1,32 @@
 <script>
-	import HomePage from '../src/component/homepage.svelte';
+	import router from "page";
+	import Home from "./pages/Home.svelte";
+	import About from "./pages/About.svelte";
+	import login from "./pages/login.svelte";
+	import Auction from "./pages/Auction.svelte";
+    import profile from "./pages/profile.svelte";
+    import Admin from "./pages/Admin.svelte";
+    import isLoggedin from "./middelware/isLoggedin";
+    import Header from "./component/Header.svelte";
 
-	const homePage = new HomePage({
-		target: document.body,
-		props: {
-			name: 'test'
-		}
+	let page;
+	let params;
+
+	router('/',(ctx) => page = Home);
+	router('/About',(ctx) => page = About);
+	router('/login',(ctx) => page = login);
+	router('/Auction/:id',(ctx) => {
+		params = ctx.params;
+		page = Auction
 	});
+    router('/profile', isLoggedin, (ctx) => page = profile);
+    router('/Admin', isLoggedin, isAdmin, (ctx) => page = Admin);
+
+	router.start();
 </script>
 
+<Header/>
+<svelte:component this="{page}" {params}/>
+<style>
 
-
-	<homePage/>
+</style>

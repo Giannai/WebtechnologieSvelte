@@ -1,6 +1,4 @@
 <script>
-    import auctions from "../component/auctions.svelte";
-
     // api call met get from auctions
     async function loadAuctions() {
         const apiCall = 'http://localhost:3000/auctions/';
@@ -14,52 +12,39 @@
             throw new Error (await resp.text());
         }
     }
-    // login() {
-    //     let email = document.getElementById("email").value;
-    //     let password = document.getElementById("password").value;
-    //
-    //     let isApiFetch = false;
-    //
-    //     const data = { email : email, password : password };
-    //
-    //     fetch('http://localhost:8080/login', {
-    //         method: 'POST', // or 'PUT'
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(data),
-    //     })
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             isApiFetch = data.result
-    //
-    //             if (isApiFetch) {
-    //                 this.isLoggingIn = true;
-    //                 setTimeout(() => {
-    //                     this.isLoggingIn = false;
-    //                     this.isAlertShow = true;
-    //                     setTimeout(() => this.redirect(), 1000)
-    //                 }, 1000)
-    //             } else {
-    //                 alert("Login Failed!");
-    //             }
-    //
-    //         })
-    //         .catch((error) => {
-    //             console.error('Error:', error);
-    //         });
-    // }
-</script>
 
+        function search() {
+            alert('test')
+        }
+
+
+
+</script>
 <!--
     Overzicht van veilingen zien
     Login&Register hamburger menu
     Zoekbalk
     Filters
-
 -->
-<div class="container">
 
+
+
+
+
+
+<div class="input-group">
+    <div class="form-outline">
+
+        <input type="search" id="form1" class="form-control" placeholder="Search"/>
+
+        <button on:click|once={search} class="btn btn-primary">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+
+</div>
+
+<div class="container">
     {#await loadAuctions()}
         <p>...waiting</p>
     {:then shops}
@@ -70,21 +55,14 @@
         <p style="color: red">{error.message}</p>
     {/await}
 
-
-
-
-
 </div>
-
 <footer>Airsoft Inc ~ 2021</footer>
 
 
 
 <style>
-
-
     .container{
-        margin-top: 3em;
+        margin-top: 1em;
         border: 2px solid black; /*#8d8d8d*/
         width: 90%;
         margin-left: auto;
@@ -115,7 +93,22 @@
         width: 100%;
         font-family: Calibri;
         font-weight: bold;
+    }
+    .input-group{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1em;
+    }
 
+    .form-control{
+        width: 97%;
+    }
+
+    .btn{
+        width: 3%;
+        float: right;
+        display: inline;
     }
 </style>
 

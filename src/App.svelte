@@ -1,4 +1,5 @@
 <script>
+
 	import router from "page";
 	import Home from "./pages/Home.svelte";
 	import About from "./pages/About.svelte";
@@ -26,8 +27,11 @@
 	router.start();
 </script>
 
+<main>
 <Header/>
 <svelte:component this="{page}" {params}/>
+
+</main>
 <style>
 
 </style>

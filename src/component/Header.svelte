@@ -9,9 +9,8 @@
 </script>
 
 <header>
-    <img on:click={() => router.redirect('/')} src="../AIRSOFT-Gun.png" class="logo">
+    <a on:click={() => router.redirect('/')}><img src="assets/logo.ico" class="logo"></a>
     <a on:click={() => router.redirect('/')}>Home</a>
-    <a on:click={() => router.redirect('/Auction')}>Auction</a>
     <a on:click={() => router.redirect('/About')}>About</a>
 
     {#if $tokenStore.token}
@@ -34,8 +33,8 @@
         cursor: pointer;
     }
     .logo{
-        width: 150px;
-        height: 150px;
+        width: 50px;
+        height: 50px;
     }
     .loged{
         margin-left: auto;

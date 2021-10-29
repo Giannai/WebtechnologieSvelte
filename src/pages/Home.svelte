@@ -2,7 +2,8 @@
     import auctions from "../component/auctions.svelte";
 </script>
 
-Blah
+Hallo
+
 
 <style>
 

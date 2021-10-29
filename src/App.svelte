@@ -7,6 +7,7 @@
     import profile from "./pages/profile.svelte";
     import Admin from "./pages/Admin.svelte";
     import isLoggedin from "./middelware/isLoggedin";
+    import isAdmin from "./middelware/isAdmin";
     import Header from "./component/Header.svelte";
 
 	let page;

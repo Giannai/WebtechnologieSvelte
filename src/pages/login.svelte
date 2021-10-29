@@ -10,11 +10,9 @@
     let password = "";
 
    async function login() {
-        const resp = fetch('http://localhost:3000') => {
+        const resp = fetch('http://localhost:3000/user');
 
-        }
-
-        $tokenStore = ;
+        $tokenStore = "";
         router.redirect('/');
     }
 </script>

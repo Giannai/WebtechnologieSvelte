@@ -14,9 +14,9 @@
     <a on:click={() => router.redirect('/About')}>About</a>
 
     {#if $tokenStore.token}
-        <a on:click={logout} class="loged">logout</a>
+        <a on:click={logout} class="login">logout</a>
     {:else}
-        <a on:click={() => router.redirect('/login')} class="loged">login</a>
+        <a on:click={() => router.redirect('/login')} class="login">Login</a>
     {/if}
 </header>
 
@@ -26,6 +26,9 @@
         background-color: #333333;
         color: white;
         padding: 0.5rem;
+        font-family: Calibri;
+        font-weight: bold;
+        font-size: larger;
     }
     a{
         margin: 1rem;
@@ -36,7 +39,9 @@
         width: 50px;
         height: 50px;
     }
-    .loged{
+    .login{
         margin-left: auto;
+        font-family: Calibri;
+        font-weight: bold;
     }
 </style>

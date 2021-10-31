@@ -23,12 +23,12 @@
     }
 </script>
 
-{#await getAuction()}
+<!--{#await getAuction()}-->
 
-{:then Auctions}
-    <Auctionlist data="{Auctions}"/>
-{:catch error}
-    <p>{error.message}</p>
+<!--{:then Auctions}-->
+<!--    <Auctionlist data="{Auctions}"/>-->
+<!--{:catch error}-->
+<!--    <p>{error.message}</p>-->
 
 <style>
 
